@@ -184,7 +184,7 @@ namespace Lab2__1_6_
                         }
                         double[,] Ar1 = new double[3, 3];
                         double[,] Ar2 = new double[3, 3];
-                        Console.WriteLine("Введите для первого массива:");
+                        Console.WriteLine("Введите значение для первого массива:");
                         for (int i = 0; i < 3; i++)
                         {
                             for (int j = 0; j < 3; j++)
@@ -203,7 +203,7 @@ namespace Lab2__1_6_
                         double Avg;
                         int x = 0;
                         Console.WriteLine("Сумма Массивов:");
-                        foreach (double H in S1(Ar1, Ar1, out Avg))
+                        foreach (double H in S1(Ar1, Ar2, out Avg))
                         {
                             if (x % 3 == 0)
                             {
@@ -224,21 +224,56 @@ namespace Lab2__1_6_
                         double[,] Ar1 = new double[5, 5];
                         double[,] Ar2 = new double[5, 5];
                         double[,] r = new double[5, 5];
-                        Console.WriteLine("Введите значения для первой матрицы");
-                        for (int i = 0; i < 5; i++)
+                        Console.WriteLine("Желаете заполнить вручную?(1-да или 2-нет)");
+                        int g = int.Parse(Console.ReadLine());
+                        if (g == 1)
                         {
-                            for (int j = 0; j < 5; j++)
+                            Console.WriteLine("Введите значения для первой матрицы");
+                            for (int i = 0; i < 5; i++)
                             {
-                                while (!double.TryParse(Console.ReadLine(), out Ar1[i, j])) ;
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    while (!double.TryParse(Console.ReadLine(), out Ar1[i, j])) ;
+                                }
+                            }
+                            Console.WriteLine("Введите значения для второй матрицы:");
+                            for (int i = 0; i < 5; i++)
+                            {
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    while (!double.TryParse(Console.ReadLine(), out Ar2[i, j])) ;
+                                }
                             }
                         }
-                        Console.WriteLine("Введите значения для второй матрицы:");
-                        for (int i = 0; i < 5; i++)
+                        if (g==2)
                         {
-                            for (int j = 0; j < 5; j++)
+                            Console.WriteLine("Укажите диапазон рандомных чисел от J до K");
+                            Console.WriteLine("J:");
+                            int J = int.Parse(Console.ReadLine());
+                            Console.WriteLine("M:");
+                            int K = int.Parse(Console.ReadLine());
+                            Console.WriteLine($"Матрица 1 заполнена случайными числами");
+                            Random R = new Random();
+                            for (int i = 0; i < N; i++)
                             {
-                                while (!double.TryParse(Console.ReadLine(), out Ar2[i, j])) ;
+                                for (int j = 0; j < N; j++)
+                                {
+                                    Ar1[i, j] = R.Next(J, K);
+                                    Console.Write($"{Ar1[i, j],4}");
+                                }
+                                Console.Write('\n');
                             }
+                            Console.WriteLine($"Матрица 2 заполнена случайными числами");
+                            for (int i = 0; i < N; i++)
+                            {
+                                for (int j = 0; j < N; j++)
+                                {
+                                    Ar2[i, j] = R.Next(J, K);
+                                    Console.Write($"{Ar2[i, j],4}");
+                                }
+                                Console.Write('\n');
+                            }
+
                         }
                         double[,] S3(double[,] Ar1, double[,] Ar2)
                         {
@@ -258,6 +293,8 @@ namespace Lab2__1_6_
                             return r;
                         }
                         int x = 0;
+                        Console.WriteLine("Произведение двух матриц:");
+                        Console.WriteLine("\n");
                         foreach (double H in S3(Ar1, Ar2))
                         {
                             if (x % 5 == 0)
@@ -284,7 +321,6 @@ namespace Lab2__1_6_
                         while (i < n)
                         {
                             array[i] = double.Parse(Console.ReadLine());
-                            Console.WriteLine();
                             i++;
                         }
                         static double sumIterative(double[] array)
@@ -340,6 +376,7 @@ namespace Lab2__1_6_
                     }
                 case 7:
                     {
+                        Console.WriteLine("Задание №7");
                         static long RecFib(long n)
                         {
                             if ((n == 1) || (n == 2))
@@ -353,6 +390,7 @@ namespace Lab2__1_6_
                         }
                         Console.WriteLine("Введите количество чисел ряда фибоначи");
                         int k = int.Parse(Console.ReadLine());
+                        Console.WriteLine("\n");
                         int x = 1;
                         while (x < k)
                         {
@@ -363,6 +401,7 @@ namespace Lab2__1_6_
                     }
                 case 8:
                     {
+                        Console.WriteLine("Задание №8");
                         static double DetMatrix(double[,] M) // M- Матрица
                         {
                             if (M.Length == 1)
@@ -442,6 +481,7 @@ namespace Lab2__1_6_
                     }
                 case 9:
                     {
+                        Console.WriteLine("Задание №9");
                         Console.WriteLine("Задание №1 (Индивидуальное (Вариант 6))");
                         int[,] mas = new int[9, 9];
                         int B = 1;
@@ -496,10 +536,23 @@ namespace Lab2__1_6_
                     }
                 case 10:
                     {
+                        Console.WriteLine("Задание №10");
                         Console.WriteLine("Укажите длинну массива");
                         int Len = int.Parse(Console.ReadLine());
+                        if (Len<1)
+                        {
+                            if (Len ==0)
+                            {
+                                Console.WriteLine("Длинна масива не может быть равная 0");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Длинна масива не может быть меньше 1");
+                            }
+                            break;
+                        }
                         int[] M = new int[Len];
-                        Console.WriteLine("Хотите ввести вручную, рандомно ,или последовательно?(1-вручную,2-рандомно,3-последовательно");
+                        Console.WriteLine("Хотите ввести вручную, рандомно ,или последовательно?(1-вручную,2-рандомно,3-последовательно)");
                         int D = int.Parse(Console.ReadLine());
                         if (D == 3)
                         {                          
@@ -518,7 +571,7 @@ namespace Lab2__1_6_
                             int K = int.Parse(Console.ReadLine());
                             Console.WriteLine($"Массив заполнена случайными числами");
                             Random r = new Random();
-                            for (int i = 1; i < Len; i++)
+                            for (int i = 1; i <Len; i++)
                             {
                                 M[i] = r.Next(J, K);
                                 Console.Write($"{M[i],4}");
@@ -528,34 +581,47 @@ namespace Lab2__1_6_
                         if (D==1)
                         {
                             Console.WriteLine("Введите значения для матрицы:");
-                            for (int i = 0; i <= Len-1; i++)
+                            for (int i = 0; i < Len; i++)
                             {
                                 int C = int.Parse(Console.ReadLine());
                                 M[i] = C;
                             }
                         }
-                        double d = M[2] - M[1];
+                        if (Len == 1)
+                        {
+                            Console.WriteLine("Указан массив с 1-м элементом: False");
+                            break;
+                        }
+                        if (Len == 2)
+                        {
+                            Console.WriteLine("Указан массив с 2-мя элементом: ");
+                            double B = M[1] - M[0];
+                            Console.WriteLine($"\nШаг равен : {B}");
+                            break;
+                        }
+                        double d = M[1] - M[0];
+                        int k = 1;
                         int a = 0;
                         int res;
-                        for (int i = 1; i < Len ; i++)
+                        for (int i = 0; i < Len-1; i++)
                         {
-                            res = (M[i] - M[0]) / i;
-                            if (M[i] - M[i-1] == d)
-                            {
-                                res = (M[i] - M[0]) / i;
+                            res = (M[i+1] - M[i]) / (k);
+                            if (M[i+1] - M[i] == d)
+                            {                               
                                 a++;
                             }
-                            if (i < Len - 1 && a!=0)
+                            if (i ==0 && a!=0)
                             {
-                                Console.WriteLine($"Шаг равен : {res}");
+                                Console.WriteLine($"\nШаг равен : {res}");
                             }
-                            if (i < Len - 1 && a == 0)
+                            if (i > Len - 3 && a == 0)
                             {
                                 Console.WriteLine("FALSE");
                             }
+                            k++;
                         }                        
                         break;
-                    }
+                    }                            
             }
         }
     }
