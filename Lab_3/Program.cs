@@ -16,6 +16,30 @@ namespace Lab2__1_6_
                         Console.WriteLine("Задание №1");
                         Console.WriteLine("Введите число элементов массива:");
                         int Num = int.Parse(Console.ReadLine());
+                        if (Num < 1)
+                        {
+                            if (Num == 0)
+                            {
+                                Console.WriteLine("Число элементов масива не может быть равным 0");
+                            }
+                            Console.WriteLine("Число элементов масива не может быть меньше 1");
+                            for (int i = 0; i < 1;)
+                            {
+                                Num = int.Parse(Console.ReadLine());
+                                if (Num == 0)
+                                {
+                                    Console.WriteLine("Число элементов масива не может быть равным 0");
+                                }
+                                if (Num < 0)
+                                {
+                                    Console.WriteLine("Число элементов масива не может быть меньше 1");
+                                }
+                                if (Num > 0)
+                                {
+                                    i++;
+                                }
+                            }
+                        }
                         Random rnd = new Random();
                         int l = Num - 3;
                         int j = 0;
@@ -124,7 +148,31 @@ namespace Lab2__1_6_
                     {
                         Console.WriteLine("Задание №3");
                         Console.WriteLine("Длинна массива");
-                        int D = int.Parse(Console.ReadLine());
+                        int D = int.Parse(Console.ReadLine());                      
+                        if (D < 1)
+                        {
+                            if (D == 0)
+                            {
+                                Console.WriteLine("Длинна масива не может быть равная 0");
+                            }
+                            Console.WriteLine("Длинна масива не может быть меньше 1");
+                            for (int i = 0; i < 1;)
+                            {
+                                D = int.Parse(Console.ReadLine());
+                                if (D == 0)
+                                {
+                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
+                                }
+                                if (D < 0)
+                                {
+                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                }
+                                if (D > 0)
+                                {
+                                    i++;
+                                }
+                            }
+                        }
                         int[] Ar = new int[D];
                         for (int i = 0; i < D; i++)
                         {
@@ -244,7 +292,7 @@ namespace Lab2__1_6_
                                     while (!double.TryParse(Console.ReadLine(), out Ar2[i, j])) ;
                                 }
                             }
-                        }
+                        }                      
                         if (g==2)
                         {
                             Console.WriteLine("Укажите диапазон рандомных чисел от J до K");
@@ -254,9 +302,9 @@ namespace Lab2__1_6_
                             int K = int.Parse(Console.ReadLine());
                             Console.WriteLine($"Матрица 1 заполнена случайными числами");
                             Random R = new Random();
-                            for (int i = 0; i < N; i++)
+                            for (int i = 0; i < 5; i++)
                             {
-                                for (int j = 0; j < N; j++)
+                                for (int j = 0; j < 5; j++)
                                 {
                                     Ar1[i, j] = R.Next(J, K);
                                     Console.Write($"{Ar1[i, j],4}");
@@ -264,9 +312,9 @@ namespace Lab2__1_6_
                                 Console.Write('\n');
                             }
                             Console.WriteLine($"Матрица 2 заполнена случайными числами");
-                            for (int i = 0; i < N; i++)
+                            for (int i = 0; i < 5; i++)
                             {
-                                for (int j = 0; j < N; j++)
+                                for (int j = 0; j < 5; j++)
                                 {
                                     Ar2[i, j] = R.Next(J, K);
                                     Console.Write($"{Ar2[i, j],4}");
@@ -315,6 +363,30 @@ namespace Lab2__1_6_
                         Console.WriteLine("Задание №6");
                         Console.WriteLine("Введите число элементов массива");
                         int n = Convert.ToInt16(Console.ReadLine());
+                        if (n < 1)
+                        {
+                            if (n == 0)
+                            {
+                                Console.WriteLine("Длинна масива не может быть равная 0");
+                            }
+                            Console.WriteLine("Длинна масива не может быть меньше 1");
+                            for (int j = 0; j < 1;)
+                            {
+                                n = int.Parse(Console.ReadLine());
+                                if (n == 0)
+                                {
+                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
+                                }
+                                if (n < 0)
+                                {
+                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                }
+                                if (n > 0)
+                                {
+                                    j++;
+                                }
+                            }
+                        }
                         double[] array = new double[n];
                         int i = 0;
                         Console.WriteLine("Введите элемент(ы) массива");
@@ -389,7 +461,31 @@ namespace Lab2__1_6_
                             }
                         }
                         Console.WriteLine("Введите количество чисел ряда фибоначи");
-                        int k = int.Parse(Console.ReadLine());
+                        int k = int.Parse(Console.ReadLine());                        
+                        if (k < 1)
+                        {
+                            if (k == 0)
+                            {
+                                Console.WriteLine("Количесво чисел не может быть равным 0");
+                            }
+                            Console.WriteLine("Количесво чисел не может быть меньше 1");
+                            for (int i = 0; i < 1;)
+                            {
+                                k = int.Parse(Console.ReadLine());
+                                if (k == 0)
+                                {
+                                    Console.WriteLine("Количесво чисел не может быть равным 0");
+                                }
+                                if (k < 0)
+                                {
+                                    Console.WriteLine("Количесво не может быть отрицательным!");
+                                }
+                                if (k > 0)
+                                {
+                                    i++;
+                                }
+                            }
+                        }
                         Console.WriteLine("\n");
                         int x = 1;
                         while (x < k)
@@ -440,17 +536,41 @@ namespace Lab2__1_6_
                             }
                             return Res;
                         }
-                        Console.WriteLine("Введите длину матрицы N (массив N*N):");
-                        N = int.Parse(Console.ReadLine());
-                        double[,] M = new double[N, N];
+                        Console.WriteLine("Введите длину матрицы B (массив B*B):");
+                        int  B= int.Parse(Console.ReadLine());
+                        if (B < 1)
+                        {
+                            if (B == 0)
+                            {
+                                Console.WriteLine("Длинна масива не может быть равная 0");
+                            }
+                            Console.WriteLine("Длинна масива не может быть меньше 1");
+                            for (int i = 0; i < 1;)
+                            {
+                                B = int.Parse(Console.ReadLine());
+                                if (B == 0)
+                                {
+                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
+                                }
+                                if (B < 0)
+                                {
+                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                }
+                                if (B > 0)
+                                {
+                                    i++;
+                                }
+                            }
+                        }
+                        double[,] M = new double[B, B];
                         Console.WriteLine("Матрица будет заполнена вручную ?(да или нет)");
                         string answer = Console.ReadLine();
                         if (answer == "да")
                         {
                             Console.WriteLine("Введите значения для матрицы:");
-                            for (int i = 0; i < N; i++)
+                            for (int i = 0; i < B; i++)
                             {
-                                for (int j = 0; j < N; j++)
+                                for (int j = 0; j < B; j++)
                                 {
                                     while (!double.TryParse(Console.ReadLine(), out M[i, j]))
                                         Console.WriteLine("Ошибка ввода числа. Попробуйте еще раз:");
@@ -466,9 +586,9 @@ namespace Lab2__1_6_
                             int K = int.Parse(Console.ReadLine());
                             Console.WriteLine($"Матрица заполнена случайными числами");
                             Random r = new Random();
-                            for (int i = 0; i < N; i++)
+                            for (int i = 0; i < B; i++)
                             {
-                                for (int j = 0; j < N; j++)
+                                for (int j = 0; j < B; j++)
                                 {
                                     M[i, j] = r.Next(J, K);
                                     Console.Write($"{M[i, j],4}");
@@ -545,11 +665,23 @@ namespace Lab2__1_6_
                             {
                                 Console.WriteLine("Длинна масива не может быть равная 0");
                             }
-                            else
+                            Console.WriteLine("Длинна масива не может быть меньше 1");                           
+                            for (int i = 0; i < 1;)
                             {
-                                Console.WriteLine("Длинна масива не может быть меньше 1");
+                                Len = int.Parse(Console.ReadLine());
+                                if (Len == 0)
+                                {
+                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
+                                }
+                                if (Len < 0)
+                                {
+                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                }
+                                if (Len > 0)
+                                {
+                                    i++;
+                                }
                             }
-                            break;
                         }
                         int[] M = new int[Len];
                         Console.WriteLine("Хотите ввести вручную, рандомно ,или последовательно?(1-вручную,2-рандомно,3-последовательно)");
