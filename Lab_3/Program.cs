@@ -17,20 +17,12 @@ namespace Lab2__1_6_
                         Console.WriteLine("Введите число элементов массива:");
                         int Num = int.Parse(Console.ReadLine());
                         if (Num < 1)
-                        {
-                            if (Num == 0)
-                            {
-                                Console.WriteLine("Число элементов масива не может быть равным 0");
-                            }
+                        {                           
                             Console.WriteLine("Число элементов масива не может быть меньше 1");
                             for (int i = 0; i < 1;)
                             {
-                                Num = int.Parse(Console.ReadLine());
-                                if (Num == 0)
-                                {
-                                    Console.WriteLine("Число элементов масива не может быть равным 0");
-                                }
-                                if (Num < 0)
+                                Num = int.Parse(Console.ReadLine());                               
+                                if (Num < 1)
                                 {
                                     Console.WriteLine("Число элементов масива не может быть меньше 1");
                                 }
@@ -150,20 +142,12 @@ namespace Lab2__1_6_
                         Console.WriteLine("Длинна массива");
                         int D = int.Parse(Console.ReadLine());                      
                         if (D < 1)
-                        {
-                            if (D == 0)
-                            {
-                                Console.WriteLine("Длинна масива не может быть равная 0");
-                            }
+                        {                           
                             Console.WriteLine("Длинна масива не может быть меньше 1");
                             for (int i = 0; i < 1;)
                             {
-                                D = int.Parse(Console.ReadLine());
-                                if (D == 0)
-                                {
-                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
-                                }
-                                if (D < 0)
+                                D = int.Parse(Console.ReadLine());                               
+                                if (D < 1)
                                 {
                                     Console.WriteLine("Длинна матрицы не может быть отрицательной!");
                                 }
@@ -298,7 +282,7 @@ namespace Lab2__1_6_
                             Console.WriteLine("Укажите диапазон рандомных чисел от J до K");
                             Console.WriteLine("J:");
                             int J = int.Parse(Console.ReadLine());
-                            Console.WriteLine("M:");
+                            Console.WriteLine("K:");
                             int K = int.Parse(Console.ReadLine());
                             Console.WriteLine($"Матрица 1 заполнена случайными числами");
                             Random R = new Random();
@@ -365,21 +349,14 @@ namespace Lab2__1_6_
                         int n = Convert.ToInt16(Console.ReadLine());
                         if (n < 1)
                         {
-                            if (n == 0)
-                            {
-                                Console.WriteLine("Длинна масива не может быть равная 0");
-                            }
                             Console.WriteLine("Длинна масива не может быть меньше 1");
                             for (int j = 0; j < 1;)
                             {
                                 n = int.Parse(Console.ReadLine());
-                                if (n == 0)
+
+                                if (n < 1)
                                 {
-                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
-                                }
-                                if (n < 0)
-                                {
-                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                    Console.WriteLine("Длинна масива не может быть меньше 1");
                                 }
                                 if (n > 0)
                                 {
@@ -464,23 +441,15 @@ namespace Lab2__1_6_
                         int k = int.Parse(Console.ReadLine());                        
                         if (k < 1)
                         {
-                            if (k == 0)
-                            {
-                                Console.WriteLine("Количесво чисел не может быть равным 0");
-                            }
                             Console.WriteLine("Количесво чисел не может быть меньше 1");
                             for (int i = 0; i < 1;)
                             {
                                 k = int.Parse(Console.ReadLine());
-                                if (k == 0)
+                                if (k < 1)
                                 {
-                                    Console.WriteLine("Количесво чисел не может быть равным 0");
+                                    Console.WriteLine("Длинна масива не может быть меньше 1");
                                 }
-                                if (k < 0)
-                                {
-                                    Console.WriteLine("Количесво не может быть отрицательным!");
-                                }
-                                if (k > 0)
+                                else
                                 {
                                     i++;
                                 }
@@ -540,23 +509,15 @@ namespace Lab2__1_6_
                         int  B= int.Parse(Console.ReadLine());
                         if (B < 1)
                         {
-                            if (B == 0)
-                            {
-                                Console.WriteLine("Длинна масива не может быть равная 0");
-                            }
                             Console.WriteLine("Длинна масива не может быть меньше 1");
                             for (int i = 0; i < 1;)
                             {
                                 B = int.Parse(Console.ReadLine());
-                                if (B == 0)
+                                if (B < 1)
                                 {
-                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
+                                    Console.WriteLine("Длинна масива не может быть меньше 1");
                                 }
-                                if (B < 0)
-                                {
-                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
-                                }
-                                if (B > 0)
+                                else
                                 {
                                     i++;
                                 }
@@ -661,21 +622,13 @@ namespace Lab2__1_6_
                         int Len = int.Parse(Console.ReadLine());
                         if (Len<1)
                         {
-                            if (Len ==0)
-                            {
-                                Console.WriteLine("Длинна масива не может быть равная 0");
-                            }
                             Console.WriteLine("Длинна масива не может быть меньше 1");                           
                             for (int i = 0; i < 1;)
                             {
                                 Len = int.Parse(Console.ReadLine());
-                                if (Len == 0)
+                                if (Len < 1)
                                 {
-                                    Console.WriteLine("Длинная матрицы не может быть равной 0");
-                                }
-                                if (Len < 0)
-                                {
-                                    Console.WriteLine("Длинна матрицы не может быть отрицательной!");
+                                    Console.WriteLine("Длинна масива не может быть меньше 1");
                                 }
                                 if (Len > 0)
                                 {
@@ -694,6 +647,7 @@ namespace Lab2__1_6_
                                 Console.Write("{0} ", M[i]);
                             }
                         }
+                        else
                         if (D == 2)
                         {                            
                             Console.WriteLine("Укажите диапазон рандомных чисел от J до K");
@@ -710,6 +664,7 @@ namespace Lab2__1_6_
 
                             }
                         }
+                        else
                         if (D==1)
                         {
                             Console.WriteLine("Введите значения для матрицы:");
@@ -718,6 +673,10 @@ namespace Lab2__1_6_
                                 int C = int.Parse(Console.ReadLine());
                                 M[i] = C;
                             }
+                        }
+                        else
+                        {
+                            break;
                         }
                         if (Len == 1)
                         {
